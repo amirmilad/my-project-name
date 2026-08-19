@@ -72,7 +72,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
             </button>
             <button
               onClick={onOpenEnquire}
-              className="px-4 py-1.5 bg-amber-400 hover:bg-amber-300 text-neutral-950 text-xs font-bold tracking-wider uppercase rounded-lg transition-colors"
+              className="px-4 py-1.5 bg-white hover:bg-white text-neutral-950 text-xs font-bold tracking-wider uppercase rounded-lg transition-colors"
             >
               {isArabic ? 'استفسر الآن' : 'Enquire'}
             </button>
@@ -96,7 +96,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
             <span className="px-3 py-1 bg-white text-black font-extrabold text-[10px] uppercase tracking-widest rounded-full">
               {displayCategory}
             </span>
-            <span className="px-3 py-1 bg-amber-400/90 text-neutral-950 font-bold text-[10px] uppercase tracking-widest rounded-full">
+            <span className="px-3 py-1 bg-white/90 text-neutral-950 font-bold text-[10px] uppercase tracking-widest rounded-full">
               {displayStatus}
             </span>
             <span className="text-xs text-neutral-300 font-medium">
@@ -109,7 +109,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
           </h1>
 
           <p className="flex items-center gap-2 text-sm sm:text-lg text-neutral-200 font-light">
-            <MapPin className="h-5 w-5 text-amber-400 shrink-0" />
+            <MapPin className="h-5 w-5 text-white shrink-0" />
             <span>{displayLocation}</span>
           </p>
         </div>
@@ -267,7 +267,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
               {/* Private Consultation Box (1 col) */}
               <div className="bg-neutral-900 text-white rounded-2xl p-6 sm:p-8 space-y-6 flex flex-col justify-between shadow-xl">
                 <div>
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-amber-400">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-white">
                     {isArabic ? 'مكتب المبيعات المباشر' : 'Direct Sales Desk'}
                   </span>
                   <h4 className="font-heading text-2xl font-extrabold uppercase mt-1">
@@ -285,12 +285,12 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
                     onClick={() => setIsBrochureOpen(true)}
                     className="w-full py-3 bg-neutral-800 hover:bg-neutral-700 text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-colors border border-neutral-700 flex items-center justify-center gap-2"
                   >
-                    <Download className="h-4 w-4 text-amber-400" />
+                    <Download className="h-4 w-4 text-white" />
                     <span>{isArabic ? 'عرض الكتالوج والتفاصيل' : 'View Brochure & Fact Sheet'}</span>
                   </button>
                   <button
                     onClick={onOpenEnquire}
-                    className="w-full py-3.5 bg-amber-400 hover:bg-amber-300 text-neutral-950 text-xs font-extrabold uppercase tracking-widest rounded-xl transition-all shadow-lg"
+                    className="w-full py-3.5 bg-white hover:bg-white text-neutral-950 text-xs font-extrabold uppercase tracking-widest rounded-xl transition-all shadow-lg"
                   >
                     {isArabic ? 'استفسر الآن' : 'Enquire Now'}
                   </button>
@@ -428,14 +428,14 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
               />
               <div className="absolute bottom-6 left-6 right-6 p-4 bg-black/80 backdrop-blur-md rounded-xl border border-white/20 flex flex-col sm:flex-row items-center justify-between gap-4 z-10">
                 <div>
-                  <span className="text-[10px] font-bold uppercase text-amber-400">
+                  <span className="text-[10px] font-bold uppercase text-white">
                     {isArabic ? 'ملخص المخطط' : 'Masterplan Summary'}
                   </span>
                   <p className="text-xs text-white font-medium">{displayLandArea} | {displayFootprint}</p>
                 </div>
                 <button
                   onClick={onOpenEnquire}
-                  className="px-6 py-2.5 bg-amber-400 hover:bg-amber-300 text-neutral-950 text-xs font-bold uppercase tracking-wider rounded-lg"
+                  className="px-6 py-2.5 bg-white hover:bg-white text-neutral-950 text-xs font-bold uppercase tracking-wider rounded-lg"
                 >
                   {isArabic ? 'طلب المخطط عالي الجودة' : 'Request HD Masterplan Vector'}
                 </button>

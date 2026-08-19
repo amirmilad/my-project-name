@@ -48,7 +48,7 @@ export const BrochureModal: React.FC<BrochureModalProps> = ({
         {/* Header Bar */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-neutral-800 bg-black/50 text-white">
           <div className="flex items-center gap-3">
-            <div className="p-2 bg-neutral-800 rounded-lg text-amber-400">
+            <div className="p-2 bg-neutral-800 rounded-lg text-white">
               <FileText className="h-5 w-5" />
             </div>
             <div>
@@ -114,7 +114,7 @@ export const BrochureModal: React.FC<BrochureModalProps> = ({
           <div className="p-6 sm:p-8 bg-neutral-900 text-white flex flex-col justify-between border-t lg:border-t-0 lg:border-l border-neutral-800">
             <div className="space-y-6">
               <div>
-                <span className="text-[10px] uppercase font-bold tracking-widest text-amber-400">
+                <span className="text-[10px] uppercase font-bold tracking-widest text-white">
                   {isArabic ? 'ملخص المشروع' : 'Master Overview'}
                 </span>
                 <h4 className="font-heading text-2xl font-extrabold mt-1">{displayName}</h4>
@@ -137,7 +137,7 @@ export const BrochureModal: React.FC<BrochureModalProps> = ({
                 </div>
                 <div className="flex justify-between py-1 border-b border-neutral-800/60">
                   <span className="text-neutral-400">{isArabic ? 'خطة السداد' : 'Payment Plan'}</span>
-                  <span className="font-semibold text-amber-300">{displayPaymentPlan}</span>
+                  <span className="font-semibold text-white">{displayPaymentPlan}</span>
                 </div>
                 <div className="flex justify-between py-1 border-b border-neutral-800/60">
                   <span className="text-neutral-400">{isArabic ? 'التسليم' : 'Delivery'}</span>
@@ -168,7 +168,7 @@ export const BrochureModal: React.FC<BrochureModalProps> = ({
                   onClose();
                   onOpenEnquire();
                 }}
-                className="w-full py-3 bg-amber-400 hover:bg-amber-300 text-neutral-950 text-xs font-bold tracking-widest uppercase rounded-xl transition-all shadow-lg text-center"
+                className="w-full py-3 bg-white hover:bg-white text-neutral-950 text-xs font-bold tracking-widest uppercase rounded-xl transition-all shadow-lg text-center"
               >
                 {isArabic ? 'طلب المخطط العام وقائمة الأسعار' : 'Request Full Masterplan & Price List'}
               </button>

@@ -51,7 +51,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquire, language })
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="p-8 bg-neutral-50 rounded-2xl border border-neutral-200/80 space-y-4">
-            <div className="p-3 bg-neutral-900 text-amber-400 rounded-xl w-fit">
+            <div className="p-3 bg-neutral-900 text-white rounded-xl w-fit">
               <Compass className="h-6 w-6" />
             </div>
             <h3 className="font-heading text-xl font-bold uppercase text-neutral-900">
@@ -65,7 +65,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquire, language })
           </div>
 
           <div className="p-8 bg-neutral-50 rounded-2xl border border-neutral-200/80 space-y-4">
-            <div className="p-3 bg-neutral-900 text-amber-400 rounded-xl w-fit">
+            <div className="p-3 bg-neutral-900 text-white rounded-xl w-fit">
               <ShieldCheck className="h-6 w-6" />
             </div>
             <h3 className="font-heading text-xl font-bold uppercase text-neutral-900">
@@ -79,7 +79,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquire, language })
           </div>
 
           <div className="p-8 bg-neutral-50 rounded-2xl border border-neutral-200/80 space-y-4">
-            <div className="p-3 bg-neutral-900 text-amber-400 rounded-xl w-fit">
+            <div className="p-3 bg-neutral-900 text-white rounded-xl w-fit">
               <Globe className="h-6 w-6" />
             </div>
             <h3 className="font-heading text-xl font-bold uppercase text-neutral-900">
@@ -98,25 +98,25 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquire, language })
       <section className="bg-neutral-950 text-white py-16 border-y border-neutral-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div>
-            <span className="font-heading text-4xl sm:text-5xl font-extrabold text-amber-400">8+</span>
+            <span className="font-heading text-4xl sm:text-5xl font-extrabold text-white">8+</span>
             <span className="block text-xs uppercase tracking-widest text-neutral-400 mt-2">
               {isArabic ? 'مشاريع رائعة' : 'Flagship Developments'}
             </span>
           </div>
           <div>
-            <span className="font-heading text-4xl sm:text-5xl font-extrabold text-amber-400">800+</span>
+            <span className="font-heading text-4xl sm:text-5xl font-extrabold text-white">800+</span>
             <span className="block text-xs uppercase tracking-widest text-neutral-400 mt-2">
               {isArabic ? 'فدان محفظة أراضي' : 'Feddans Land Bank'}
             </span>
           </div>
           <div>
-            <span className="font-heading text-4xl sm:text-5xl font-extrabold text-amber-400">100%</span>
+            <span className="font-heading text-4xl sm:text-5xl font-extrabold text-white">100%</span>
             <span className="block text-xs uppercase tracking-widest text-neutral-400 mt-2">
               {isArabic ? 'التزام بالمواعيد' : 'On-Schedule Milestone Ratio'}
             </span>
           </div>
           <div>
-            <span className="font-heading text-4xl sm:text-5xl font-extrabold text-amber-400">16547</span>
+            <span className="font-heading text-4xl sm:text-5xl font-extrabold text-white">16547</span>
             <span className="block text-xs uppercase tracking-widest text-neutral-400 mt-2">
               {isArabic ? 'الخط الساخن المباشر' : 'Dedicated Hotline'}
             </span>

@@ -42,7 +42,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnquire, langu
 
           {/* Featured Projects Links */}
           <div className="space-y-4">
-            <h4 className="font-heading text-xs font-bold uppercase tracking-widest text-amber-400">
+            <h4 className="font-heading text-xs font-bold uppercase tracking-widest text-white">
               {isArabic ? 'أبرز المشاريع' : 'Flagship Projects'}
             </h4>
             <ul className="space-y-2.5 text-xs text-neutral-300">
@@ -72,7 +72,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnquire, langu
 
           {/* Quick Nav Links */}
           <div className="space-y-4">
-            <h4 className="font-heading text-xs font-bold uppercase tracking-widest text-amber-400">
+            <h4 className="font-heading text-xs font-bold uppercase tracking-widest text-white">
               {isArabic ? 'التنقل السريع' : 'Navigation'}
             </h4>
             <ul className="space-y-2.5 text-xs text-neutral-300">
@@ -101,19 +101,19 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnquire, langu
 
           {/* Contact Details */}
           <div className="space-y-4">
-            <h4 className="font-heading text-xs font-bold uppercase tracking-widest text-amber-400">
+            <h4 className="font-heading text-xs font-bold uppercase tracking-widest text-white">
               {isArabic ? 'تواصل معنا' : 'Get in Touch'}
             </h4>
             <div className="space-y-3 text-xs text-neutral-300">
-              <a href="tel:16547" className="flex items-center gap-2.5 text-white font-bold text-sm hover:text-amber-300">
-                <Phone className="h-4 w-4 text-amber-400 shrink-0" />
+              <a href="tel:16547" className="flex items-center gap-2.5 text-white font-bold text-sm hover:text-white">
+                <Phone className="h-4 w-4 text-white shrink-0" />
                 <span>{isArabic ? 'الخط الساخن' : 'Hotline'}: 16547 | 01012268500</span>
               </a>
             </div>
 
             <button
               onClick={onOpenEnquire}
-              className="mt-2 w-full py-2.5 bg-amber-400 hover:bg-amber-300 text-neutral-950 font-bold text-xs uppercase tracking-wider rounded-lg transition-colors text-center"
+              className="mt-2 w-full py-2.5 bg-white hover:bg-white text-neutral-950 font-bold text-xs uppercase tracking-wider rounded-lg transition-colors text-center"
             >
               {isArabic ? 'طلب استشارة عقارية خاصة' : 'Private Advisory Request'}
             </button>

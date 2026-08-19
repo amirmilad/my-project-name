@@ -7,9 +7,9 @@ interface LogoProps {
 }
 
 export const Logo: React.FC<LogoProps> = ({ className = 'h-10 w-10', variant = 'dark', showText = true }) => {
-  const strokeColor = variant === 'light' ? '#FFFFFF' : variant === 'gold' ? '#D4AF37' : '#000000';
-  const fillColor = variant === 'light' ? '#FFFFFF' : variant === 'gold' ? '#D4AF37' : '#000000';
-  const textColor = variant === 'light' ? 'text-white' : variant === 'gold' ? 'text-[#D4AF37]' : 'text-neutral-900';
+  const strokeColor = variant === 'light' ? '#FFFFFF' : variant === 'gold' ? '#FFFFFF' : '#000000';
+  const fillColor = variant === 'light' ? '#FFFFFF' : variant === 'gold' ? '#FFFFFF' : '#000000';
+  const textColor = variant === 'light' ? 'text-white' : variant === 'gold' ? 'text-white' : 'text-neutral-900';
 
   return (
     <div className="flex items-center gap-3 group cursor-pointer select-none">

@@ -206,9 +206,9 @@ export const HomePage: React.FC<HomePageProps> = ({
             <div className={`lg:col-span-7 space-y-6 sm:space-y-8 ${isArabic ? 'text-right' : 'text-left'}`}>
               
               {/* Luxury Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/60 border border-amber-400/40 backdrop-blur-md shadow-lg">
-                <Sparkles className="h-3.5 w-3.5 text-amber-400 animate-pulse" />
-                <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-amber-200">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/60 border border-white/40 backdrop-blur-md shadow-lg">
+                <Sparkles className="h-3.5 w-3.5 text-white animate-pulse" />
+                <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-white">
                   {isArabic ? 'إل كازار للتطوير العقاري • الفئة الأولى (Grade A)' : 'IL CAZAR DEVELOPMENTS • GRADE A DEVELOPER'}
                 </span>
               </div>
@@ -217,7 +217,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               <div className="space-y-2">
                 <h1 className="font-heading text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight uppercase leading-[1.08] text-white drop-shadow-md">
                   IL CAZAR <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-white to-amber-400">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-white to-neutral-100">
                     {isArabic ? 'إتقان معماري خالد' : 'DEVELOPMENTS'}
                   </span>
                 </h1>
@@ -232,7 +232,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               <div className="pt-1 flex flex-wrap items-center gap-3.5">
                 <button
                   onClick={() => onNavigate('projects')}
-                  className="w-full sm:w-auto px-7 py-3.5 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-neutral-950 font-extrabold text-xs uppercase tracking-widest rounded-xl transition-all shadow-xl hover:scale-105 flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto px-7 py-3.5 bg-gradient-to-r from-white to-neutral-200 hover:from-neutral-100 hover:to-neutral-100 text-neutral-950 font-extrabold text-xs uppercase tracking-widest rounded-xl transition-all shadow-xl hover:scale-105 flex items-center justify-center gap-2"
                 >
                   <span>{isArabic ? 'استكشف كافة المشروعات' : 'Explore All Projects'}</span>
                   <ArrowRight className={`h-4 w-4 ${isArabic ? 'rotate-180' : ''}`} />
@@ -247,21 +247,21 @@ export const HomePage: React.FC<HomePageProps> = ({
 
                 <a
                   href="tel:16547"
-                  className="hidden sm:inline-flex items-center gap-2 px-5 py-3.5 bg-black/60 hover:bg-black/90 text-amber-300 border border-amber-500/30 rounded-xl text-xs font-bold transition-all"
+                  className="hidden sm:inline-flex items-center gap-2 px-5 py-3.5 bg-black/60 hover:bg-black/90 text-white border border-amber-500/30 rounded-xl text-xs font-bold transition-all"
                 >
-                  <PhoneCall className="h-4 w-4 text-amber-400" />
+                  <PhoneCall className="h-4 w-4 text-white" />
                   <span>16547</span>
                 </a>
               </div>
 
               {/* Interactive Active Project Showcase Card */}
               <div className="pt-3">
-                <div className="bg-black/65 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-5 shadow-2xl transition-all hover:border-amber-400/50">
+                <div className="bg-black/65 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-5 shadow-2xl transition-all hover:border-white/50">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                     
                     {/* Project Information */}
                     <div className="space-y-1">
-                      <div className="flex items-center gap-2 text-xs font-semibold text-amber-400">
+                      <div className="flex items-center gap-2 text-xs font-semibold text-white">
                         <MapPin className="h-3.5 w-3.5 shrink-0" />
                         <span className="truncate">{currentProject?.location}</span>
                       </div>
@@ -279,7 +279,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                     <div className="flex items-center justify-between sm:justify-end gap-3 pt-2 sm:pt-0 border-t sm:border-t-0 border-white/10">
                       <button
                         onClick={() => onSelectProject(currentProject?.id || 'the-crest')}
-                        className="px-3 py-1.5 bg-amber-400/20 hover:bg-amber-400/30 border border-amber-400/40 text-amber-300 rounded-lg text-xs font-bold flex items-center gap-1.5 transition-colors"
+                        className="px-3 py-1.5 bg-white/20 hover:bg-white/30 border border-white/40 text-white rounded-lg text-xs font-bold flex items-center gap-1.5 transition-colors"
                       >
                         <span>{isArabic ? 'تفاصيل المشروع' : 'View Project'}</span>
                         <ExternalLink className="h-3 w-3" />
@@ -289,7 +289,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                       <div className="flex items-center gap-1.5 bg-black/60 border border-white/20 rounded-full px-2 py-1">
                         <button
                           onClick={handlePrevSlide}
-                          className="p-1 hover:text-amber-400 transition-colors"
+                          className="p-1 hover:text-white transition-colors"
                           title={isArabic ? 'المشروع السابق' : 'Previous Project'}
                           aria-label="Previous Slide"
                         >
@@ -304,7 +304,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                               aria-label={`Slide ${idx + 1}`}
                               className={`h-1.5 rounded-full transition-all ${
                                 idx === currentSlideIndex
-                                  ? 'w-5 bg-amber-400 shadow-[0_0_8px_rgba(251,191,36,0.6)]'
+                                  ? 'w-5 bg-white shadow-[0_0_8px_rgba(251,191,36,0.6)]'
                                   : 'w-1.5 bg-white/40 hover:bg-white/70'
                               }`}
                             />
@@ -313,7 +313,7 @@ export const HomePage: React.FC<HomePageProps> = ({
 
                         <button
                           onClick={handleNextSlide}
-                          className="p-1 hover:text-amber-400 transition-colors"
+                          className="p-1 hover:text-white transition-colors"
                           title={isArabic ? 'المشروع التالي' : 'Next Project'}
                           aria-label="Next Slide"
                         >
@@ -407,7 +407,7 @@ export const HomePage: React.FC<HomePageProps> = ({
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative rounded-3xl overflow-hidden bg-neutral-950 text-white p-8 sm:p-14 shadow-2xl border border-neutral-800">
           <div className="relative z-10 max-w-2xl space-y-4">
-            <span className="text-xs font-bold uppercase tracking-widest text-amber-400">
+            <span className="text-xs font-bold uppercase tracking-widest text-white">
               {isArabic ? 'تملك حصري وفاخر' : 'Exclusive Ownership'}
             </span>
             <h3 className="font-heading text-3xl sm:text-4xl font-extrabold uppercase tracking-tight">
@@ -421,7 +421,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             <div className="pt-2 flex flex-wrap items-center gap-4">
               <button
                 onClick={onOpenEnquire}
-                className="px-8 py-3.5 bg-amber-400 hover:bg-amber-300 text-neutral-950 font-bold text-xs uppercase tracking-widest rounded-xl transition-all shadow-lg"
+                className="px-8 py-3.5 bg-white hover:bg-white text-neutral-950 font-bold text-xs uppercase tracking-widest rounded-xl transition-all shadow-lg"
               >
                 {isArabic ? 'طلب استشارة خاصة' : 'Request Private Consultation'}
               </button>

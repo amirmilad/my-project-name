@@ -64,7 +64,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onSelect, lan
         <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 z-10 flex flex-col justify-end text-white">
           <div className="flex items-end justify-between">
             <div>
-              <h3 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-2 group-hover:text-amber-100 transition-colors">
+              <h3 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-2 group-hover:text-white transition-colors">
                 {displayName}
               </h3>
               <p className="flex items-center gap-1.5 text-sm sm:text-base font-medium text-neutral-200/90 tracking-wide">

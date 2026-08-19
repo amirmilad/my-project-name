@@ -124,13 +124,13 @@ export const Navbar: React.FC<NavbarProps> = ({
                     key={link.id}
                     type="button"
                     onClick={() => handleNavClick(link.id)}
-                    className={`relative py-1.5 uppercase transition-colors hover:text-amber-300 cursor-pointer ${
-                      isActive ? 'text-amber-400 font-extrabold' : 'text-neutral-200 hover:text-white'
+                    className={`relative py-1.5 uppercase transition-colors hover:text-white cursor-pointer ${
+                      isActive ? 'text-white font-extrabold' : 'text-neutral-200 hover:text-white'
                     }`}
                   >
                     <span>{link.label}</span>
                     {isActive && (
-                      <span className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-amber-400 to-amber-200 rounded-full shadow-[0_0_8px_rgba(251,191,36,0.8)]" />
+                      <span className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-white to-white rounded-full shadow-[0_0_8px_rgba(255,255,255,0.5)]" />
                     )}
                   </button>
                 );
@@ -144,7 +144,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               <button
                 type="button"
                 onClick={onToggleLanguage}
-                className="text-[11px] sm:text-xs font-bold text-white hover:text-amber-300 transition-all px-2.5 py-1.5 bg-white/10 hover:bg-white/20 rounded-full border border-white/20 backdrop-blur-md shadow-sm cursor-pointer"
+                className="text-[11px] sm:text-xs font-bold text-white hover:text-white transition-all px-2.5 py-1.5 bg-white/10 hover:bg-white/20 rounded-full border border-white/20 backdrop-blur-md shadow-sm cursor-pointer"
                 title={isArabic ? 'Switch to English' : 'التحويل إلى العربية'}
                 aria-label="Toggle Language"
               >
@@ -166,10 +166,10 @@ export const Navbar: React.FC<NavbarProps> = ({
               {/* Direct Hotline Pill (Desktop & Tablet) */}
               <a
                 href="tel:16547"
-                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 bg-black/50 hover:bg-black/80 border border-amber-400/40 rounded-full text-xs font-bold text-amber-300 backdrop-blur-md transition-all shadow-sm"
+                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 bg-black/50 hover:bg-black/80 border border-white/40 rounded-full text-xs font-bold text-white backdrop-blur-md transition-all shadow-sm"
                 title={isArabic ? 'الخط الساخن 16547' : 'Hotline 16547'}
               >
-                <PhoneCall className="w-3.5 h-3.5 text-amber-400" />
+                <PhoneCall className="w-3.5 h-3.5 text-white" />
                 <span className="font-heading tracking-wider">16547</span>
               </a>
 
@@ -177,7 +177,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               <button
                 type="button"
                 onClick={onOpenEnquire}
-                className="hidden md:inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-neutral-950 rounded-full text-xs font-extrabold tracking-wider uppercase transition-all shadow-md hover:scale-105 cursor-pointer"
+                className="hidden md:inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-gradient-to-r from-white to-neutral-200 hover:from-neutral-100 hover:to-neutral-100 text-neutral-950 rounded-full text-xs font-extrabold tracking-wider uppercase transition-all shadow-md hover:scale-105 cursor-pointer"
               >
                 <Sparkles className="w-3.5 h-3.5 text-neutral-950" />
                 <span>{isArabic ? 'طلب استشارة' : 'Enquire'}</span>
@@ -189,8 +189,8 @@ export const Navbar: React.FC<NavbarProps> = ({
                 onClick={() => setMenuOpen(!menuOpen)}
                 className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center shadow-lg transition-all transform hover:scale-105 shrink-0 cursor-pointer ${
                   menuOpen
-                    ? 'bg-amber-400 text-neutral-950 ring-2 ring-amber-300'
-                    : 'bg-white hover:bg-amber-400 text-neutral-950'
+                    ? 'bg-white text-neutral-950 ring-2 ring-white'
+                    : 'bg-white hover:bg-white text-neutral-950'
                 }`}
                 aria-label="Toggle Navigation Menu"
                 title={isArabic ? 'القائمة الرئيسية' : 'Menu'}
@@ -225,7 +225,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 onClick={onToggleLanguage}
                 className="text-xs font-bold text-white px-3 py-1.5 bg-white/10 hover:bg-white/20 rounded-full border border-white/20 flex items-center gap-1.5 cursor-pointer"
               >
-                <Globe className="w-3.5 h-3.5 text-amber-400" />
+                <Globe className="w-3.5 h-3.5 text-white" />
                 <span>{language === 'EN' ? 'العربية' : 'English'}</span>
               </button>
 
@@ -233,7 +233,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               <button
                 type="button"
                 onClick={() => setMenuOpen(false)}
-                className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-amber-400 hover:bg-amber-300 text-neutral-950 flex items-center justify-center transition-all shadow-xl hover:scale-105 cursor-pointer"
+                className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white hover:bg-white text-neutral-950 flex items-center justify-center transition-all shadow-xl hover:scale-105 cursor-pointer"
                 aria-label="Close Menu"
               >
                 <X className="w-5 h-5 font-bold" />
@@ -247,7 +247,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               
               {/* Column 1: Main Navigation Pages */}
               <div className="md:col-span-4 space-y-3 sm:space-y-4">
-                <span className="text-[11px] font-bold uppercase tracking-widest text-amber-400 flex items-center gap-2">
+                <span className="text-[11px] font-bold uppercase tracking-widest text-white flex items-center gap-2">
                   <Building className="h-3.5 w-3.5" />
                   <span>{isArabic ? 'الصفحات الرئيسية' : 'MAIN PAGES'}</span>
                 </span>
@@ -263,12 +263,12 @@ export const Navbar: React.FC<NavbarProps> = ({
                         onClick={() => handleNavClick(link.id)}
                         className={`w-full py-3.5 px-4 rounded-xl font-heading text-base sm:text-lg font-black tracking-wide uppercase transition-all flex items-center justify-between cursor-pointer ${
                           isActive
-                            ? 'bg-gradient-to-r from-amber-400 to-amber-500 text-neutral-950 shadow-xl'
+                            ? 'bg-gradient-to-r from-white to-neutral-200 text-neutral-950 shadow-xl'
                             : 'bg-neutral-900/80 hover:bg-neutral-800 text-neutral-200 hover:text-white border border-neutral-800'
                         }`}
                       >
                         <div className="flex items-center gap-3">
-                          <IconComp className={`h-4 w-4 ${isActive ? 'text-neutral-950' : 'text-amber-400'}`} />
+                          <IconComp className={`h-4 w-4 ${isActive ? 'text-neutral-950' : 'text-white'}`} />
                           <span>{link.label}</span>
                         </div>
                         <ChevronRight className={`h-4 w-4 ${isArabic ? 'rotate-180' : ''} ${isActive ? 'text-neutral-950' : 'text-neutral-400'}`} />
@@ -281,14 +281,14 @@ export const Navbar: React.FC<NavbarProps> = ({
               {/* Column 2: Flagship Developments Portfolio */}
               <div className="md:col-span-5 space-y-3 sm:space-y-4 border-t md:border-t-0 md:border-x border-neutral-800 pt-6 md:pt-0 md:px-6">
                 <div className="flex items-center justify-between">
-                  <span className="text-[11px] font-bold uppercase tracking-widest text-amber-400 flex items-center gap-2">
+                  <span className="text-[11px] font-bold uppercase tracking-widest text-white flex items-center gap-2">
                     <Layers className="h-3.5 w-3.5" />
                     <span>{isArabic ? 'أبرز المشروعات' : 'FLAGSHIP PROJECTS'}</span>
                   </span>
                   <button
                     type="button"
                     onClick={() => handleNavClick('projects')}
-                    className="text-xs font-bold text-amber-300 hover:underline cursor-pointer"
+                    className="text-xs font-bold text-white hover:underline cursor-pointer"
                   >
                     {isArabic ? 'عرض كافة المشروعات' : 'View All Projects'}
                   </button>
@@ -300,18 +300,18 @@ export const Navbar: React.FC<NavbarProps> = ({
                       key={p.id}
                       type="button"
                       onClick={() => handleNavClick('project-detail', p.id)}
-                      className="p-3.5 bg-neutral-900/80 hover:bg-neutral-800 rounded-xl border border-neutral-800 hover:border-amber-400/40 transition-all text-start group flex items-center justify-between cursor-pointer"
+                      className="p-3.5 bg-neutral-900/80 hover:bg-neutral-800 rounded-xl border border-neutral-800 hover:border-white/40 transition-all text-start group flex items-center justify-between cursor-pointer"
                     >
                       <div className="space-y-1 min-w-0 pr-2">
-                        <h4 className="font-heading font-extrabold text-sm text-white group-hover:text-amber-300 transition-colors truncate">
+                        <h4 className="font-heading font-extrabold text-sm text-white group-hover:text-white transition-colors truncate">
                           {p.name}
                         </h4>
                         <div className="flex items-center gap-1 text-[11px] text-neutral-400">
-                          <MapPin className="h-3 w-3 text-amber-400 shrink-0" />
+                          <MapPin className="h-3 w-3 text-white shrink-0" />
                           <span className="truncate">{p.loc}</span>
                         </div>
                       </div>
-                      <ChevronRight className={`h-4 w-4 text-neutral-500 group-hover:text-amber-300 transition-colors shrink-0 ${isArabic ? 'rotate-180' : ''}`} />
+                      <ChevronRight className={`h-4 w-4 text-neutral-500 group-hover:text-white transition-colors shrink-0 ${isArabic ? 'rotate-180' : ''}`} />
                     </button>
                   ))}
                 </div>
@@ -320,7 +320,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               {/* Column 3: Direct VIP Contact & Consultation */}
               <div className="md:col-span-3 space-y-4 border-t md:border-t-0 border-neutral-800 pt-6 md:pt-0 flex flex-col justify-between">
                 <div className="space-y-3">
-                  <span className="text-[11px] font-bold uppercase tracking-widest text-amber-400 flex items-center gap-2">
+                  <span className="text-[11px] font-bold uppercase tracking-widest text-white flex items-center gap-2">
                     <PhoneCall className="h-3.5 w-3.5" />
                     <span>{isArabic ? 'التواصل المباشر' : 'DIRECT CONTACT'}</span>
                   </span>
@@ -328,16 +328,16 @@ export const Navbar: React.FC<NavbarProps> = ({
                   {/* Hotline Dial */}
                   <a
                     href="tel:16547"
-                    className="flex items-center gap-3 p-3.5 bg-neutral-900/90 rounded-xl border border-amber-400/40 text-white hover:border-amber-400 transition-colors shadow-md"
+                    className="flex items-center gap-3 p-3.5 bg-neutral-900/90 rounded-xl border border-white/40 text-white hover:border-white transition-colors shadow-md"
                   >
-                    <div className="w-10 h-10 rounded-lg bg-amber-400/20 text-amber-300 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-lg bg-white/20 text-white flex items-center justify-center shrink-0">
                       <PhoneCall className="h-5 w-5" />
                     </div>
                     <div>
                       <span className="block text-[10px] text-neutral-400 uppercase font-semibold">
                         {isArabic ? 'الخط الساخن الرسمي' : 'OFFICIAL HOTLINE'}
                       </span>
-                      <strong className="font-heading text-lg font-black text-amber-300">16547</strong>
+                      <strong className="font-heading text-lg font-black text-white">16547</strong>
                     </div>
                   </a>
 
@@ -368,7 +368,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                       setMenuOpen(false);
                       onOpenEnquire();
                     }}
-                    className="w-full py-4 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-neutral-950 font-black text-xs uppercase tracking-widest rounded-xl transition-all shadow-2xl text-center cursor-pointer"
+                    className="w-full py-4 bg-gradient-to-r from-white to-neutral-200 hover:from-neutral-100 hover:to-neutral-100 text-neutral-950 font-black text-xs uppercase tracking-widest rounded-xl transition-all shadow-2xl text-center cursor-pointer"
                   >
                     {isArabic ? 'طلب استشارة خاصة ومخطط' : 'REQUEST PRIVATE CONSULTATION'}
                   </button>

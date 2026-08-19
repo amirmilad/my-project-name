@@ -72,7 +72,7 @@ export const ImageGalleryModal: React.FC<ImageGalleryModalProps> = ({
               key={idx}
               onClick={() => setCurrentIndex(idx)}
               className={`relative h-14 w-20 rounded-lg overflow-hidden shrink-0 border-2 transition-all ${
-                currentIndex === idx ? 'border-amber-400 scale-105 opacity-100' : 'border-transparent opacity-50 hover:opacity-80'
+                currentIndex === idx ? 'border-white scale-105 opacity-100' : 'border-transparent opacity-50 hover:opacity-80'
               }`}
             >
               <img src={img} alt={`Thumb ${idx + 1}`} referrerPolicy="no-referrer" className="h-full w-full object-cover" />

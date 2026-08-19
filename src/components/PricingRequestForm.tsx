@@ -179,14 +179,14 @@ export const PricingRequestForm: React.FC<PricingRequestFormProps> = ({
           href="tel:16547"
           className="flex items-center gap-2.5 group transition-all"
         >
-          <div className="w-9 h-9 rounded-lg bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 group-hover:bg-amber-500 group-hover:text-black transition-all">
+          <div className="w-9 h-9 rounded-lg bg-white/20 border border-amber-500/40 flex items-center justify-center text-white group-hover:bg-white group-hover:text-black transition-all">
             <PhoneCall className="w-4 h-4" />
           </div>
           <div>
-            <span className="block text-[10px] font-mono uppercase tracking-widest text-amber-300 font-semibold">
+            <span className="block text-[10px] font-mono uppercase tracking-widest text-white font-semibold">
               {isArabic ? 'الهوتلاين المباشر' : 'DIRECT HOTLINE'}
             </span>
-            <span className="font-heading text-lg font-black tracking-wider text-white group-hover:text-amber-300 transition-colors">
+            <span className="font-heading text-lg font-black tracking-wider text-white group-hover:text-white transition-colors">
               16547
             </span>
           </div>

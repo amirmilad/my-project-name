@@ -84,7 +84,7 @@ export const ConstructionUpdatesPage: React.FC<ConstructionUpdatesPageProps> = (
                     containerClassName="w-full h-full"
                     className="w-full h-full object-cover"
                   />
-                  <span className="absolute top-4 left-4 px-3 py-1 bg-black/80 backdrop-blur-md text-amber-400 font-bold text-[10px] uppercase tracking-wider rounded-md z-10">
+                  <span className="absolute top-4 left-4 px-3 py-1 bg-black/80 backdrop-blur-md text-white font-bold text-[10px] uppercase tracking-wider rounded-md z-10">
                     {update.quarter}
                   </span>
                 </div>
@@ -115,7 +115,7 @@ export const ConstructionUpdatesPage: React.FC<ConstructionUpdatesPageProps> = (
                       </div>
                       <div className="w-full h-2.5 bg-neutral-100 rounded-full overflow-hidden">
                         <div
-                          className="h-full bg-gradient-to-r from-neutral-900 to-amber-500 rounded-full transition-all duration-1000"
+                          className="h-full bg-gradient-to-r from-neutral-900 to-neutral-200 rounded-full transition-all duration-1000"
                           style={{ width: `${update.completionPercentage}%` }}
                         />
                       </div>

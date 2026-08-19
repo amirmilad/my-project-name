@@ -43,10 +43,10 @@ export const ContactPage: React.FC<ContactPageProps> = ({ projects, language = '
           <div className="space-y-8">
             <div className="p-8 bg-neutral-950 text-white rounded-3xl space-y-6 shadow-xl">
               <div>
-                <span className="text-[10px] font-bold uppercase tracking-widest text-amber-400">
+                <span className="text-[10px] font-bold uppercase tracking-widest text-white">
                   {isArabic ? 'خدمة الخط الساخن' : 'Hotline Services'}
                 </span>
-                <a href="tel:16547" className="block font-heading text-4xl sm:text-5xl font-black text-white hover:text-amber-300 transition-colors mt-1">
+                <a href="tel:16547" className="block font-heading text-4xl sm:text-5xl font-black text-white hover:text-white transition-colors mt-1">
                   16547
                 </a>
                 <span className="text-xs font-semibold text-slate-300 block mt-1">
@@ -56,7 +56,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ projects, language = '
 
               <div className="space-y-4 pt-4 border-t border-neutral-800 text-xs text-neutral-300">
                 <div className="flex items-center gap-3">
-                  <Clock className="h-5 w-5 text-amber-400 shrink-0" />
+                  <Clock className="h-5 w-5 text-white shrink-0" />
                   <div>
                     <strong className="block text-white text-sm">
                       {isArabic ? 'مواعيد العمل' : 'Sales Hours'}

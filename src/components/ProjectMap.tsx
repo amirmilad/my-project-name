@@ -68,7 +68,7 @@ export const ProjectMap: React.FC<ProjectMapProps> = ({
           html: `
             <div class="relative group cursor-pointer">
               <div class="flex items-center gap-1.5 px-3 py-1.5 bg-neutral-900 text-white rounded-full shadow-lg border border-neutral-700 hover:bg-black transition-all transform hover:scale-110">
-                <span class="w-2 h-2 rounded-full ${isCommercial ? 'bg-amber-400' : 'bg-emerald-400'}"></span>
+                <span class="w-2 h-2 rounded-full ${isCommercial ? 'bg-white' : 'bg-emerald-400'}"></span>
                 <span class="text-xs font-bold font-mono tracking-wider">${name}</span>
               </div>
             </div>
@@ -167,7 +167,7 @@ export const ProjectMap: React.FC<ProjectMapProps> = ({
           <span>Residential</span>
         </div>
         <div className="flex items-center gap-1.5">
-          <span className="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+          <span className="w-2.5 h-2.5 rounded-full bg-white"></span>
           <span>Commercial</span>
         </div>
       </div>

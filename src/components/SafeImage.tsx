@@ -59,7 +59,7 @@ export const SafeImage: React.FC<SafeImageProps> = ({
 
       {hasError ? (
         <div className="w-full h-full min-h-[140px] bg-neutral-900 border border-neutral-800 flex flex-col items-center justify-center p-4 text-center">
-          <ImageIcon className="w-8 h-8 text-amber-400 mb-2 opacity-60" />
+          <ImageIcon className="w-8 h-8 text-white mb-2 opacity-60" />
           <span className="text-xs uppercase tracking-wider font-semibold text-neutral-400">
             IL CAZAR DEVELOPMENTS
           </span>
