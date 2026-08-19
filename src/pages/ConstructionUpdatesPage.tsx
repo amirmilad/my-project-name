@@ -29,7 +29,7 @@ export const ConstructionUpdatesPage: React.FC<ConstructionUpdatesPageProps> = (
         
         {/* Title */}
         <div className="text-center space-y-3">
-          <span className="text-xs font-bold uppercase tracking-widest text-amber-600">
+          <span className="text-xs font-bold uppercase tracking-widest text-white">
             {isArabic ? 'تطورات الأعمال والإنشاءات' : 'On-Site Progress'}
           </span>
           <h1 className="font-heading text-4xl sm:text-6xl font-black uppercase tracking-tight text-neutral-900">
@@ -93,7 +93,7 @@ export const ConstructionUpdatesPage: React.FC<ConstructionUpdatesPageProps> = (
                 <div className="lg:col-span-2 p-6 sm:p-8 space-y-6 flex flex-col justify-between">
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-extrabold uppercase tracking-wider text-amber-600">
+                      <span className="text-xs font-extrabold uppercase tracking-wider text-white">
                         {displayProjectName}
                       </span>
                       <span className="text-xs text-neutral-400 font-semibold flex items-center gap-1">
@@ -111,7 +111,7 @@ export const ConstructionUpdatesPage: React.FC<ConstructionUpdatesPageProps> = (
                         <span className="text-neutral-700 uppercase tracking-wider">
                           {isArabic ? 'نسبة الإنجاز الإنشائي' : 'Completion Status'}
                         </span>
-                        <span className="text-amber-600">{update.completionPercentage}%</span>
+                        <span className="text-white">{update.completionPercentage}%</span>
                       </div>
                       <div className="w-full h-2.5 bg-neutral-100 rounded-full overflow-hidden">
                         <div

@@ -174,12 +174,12 @@ export const PricingRequestForm: React.FC<PricingRequestFormProps> = ({
       </div>
 
       {/* Separate Hotline & WhatsApp Card Below Form */}
-      <div className="w-full bg-[#0a111e]/55 backdrop-blur-md border border-amber-500/30 rounded-xl p-4 text-white shadow-xl flex items-center justify-between gap-3">
+      <div className="w-full bg-[#0a111e]/55 backdrop-blur-md border border-white/30 rounded-xl p-4 text-white shadow-xl flex items-center justify-between gap-3">
         <a
           href="tel:16547"
           className="flex items-center gap-2.5 group transition-all"
         >
-          <div className="w-9 h-9 rounded-lg bg-white/20 border border-amber-500/40 flex items-center justify-center text-white group-hover:bg-white group-hover:text-black transition-all">
+          <div className="w-9 h-9 rounded-lg bg-white/20 border border-white/40 flex items-center justify-center text-white group-hover:bg-white group-hover:text-black transition-all">
             <PhoneCall className="w-4 h-4" />
           </div>
           <div>

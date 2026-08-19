@@ -15,7 +15,7 @@ export default function App() {
   const [currentPage, setCurrentPage] = useState<string>('home');
   const [selectedProjectId, setSelectedProjectId] = useState<string>('the-crest');
   const [isEnquireModalOpen, setIsEnquireModalOpen] = useState<boolean>(false);
-  const [language, setLanguage] = useState<'EN' | 'AR'>('AR');
+  const [language, setLanguage] = useState<'EN' | 'AR'>('EN');
 
   const selectedProject = PROJECTS_DATA.find(p => p.id === selectedProjectId) || PROJECTS_DATA[0];
 

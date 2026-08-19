@@ -136,7 +136,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
             <span className="block text-[10px] font-bold uppercase tracking-widest text-neutral-400">
               {isArabic ? 'أسعار تبدأ من' : 'Starting Price'}
             </span>
-            <span className="font-heading font-extrabold text-lg text-amber-600">{displayStartingPrice}</span>
+            <span className="font-heading font-extrabold text-lg text-white">{displayStartingPrice}</span>
           </div>
           <div>
             <span className="block text-[10px] font-bold uppercase tracking-widest text-neutral-400">
@@ -177,7 +177,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
             <div className="bg-neutral-50/80 rounded-2xl p-6 sm:p-8 border border-neutral-200/90 shadow-sm space-y-6">
               <div className="border-b border-neutral-200 pb-4 flex items-center justify-between">
                 <div>
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-amber-600 block">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-white block">
                     {isArabic ? 'دليل التفاصيل الكاملة' : 'Comprehensive Project Guide'}
                   </span>
                   <h3 className="font-heading text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-neutral-900 mt-0.5">
@@ -185,7 +185,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
                   </h3>
                 </div>
                 <div className="hidden sm:flex items-center gap-2 text-xs font-semibold text-neutral-500 bg-white px-3 py-1.5 rounded-lg border border-neutral-200">
-                  <Building className="h-4 w-4 text-amber-500" />
+                  <Building className="h-4 w-4 text-white" />
                   <span>{displayCategory}</span>
                 </div>
               </div>
@@ -194,7 +194,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
                 {/* 1. Project Overview & Concept */}
                 <div className="p-5 bg-white rounded-xl border border-neutral-200/80 shadow-xs space-y-2">
                   <h4 className="font-heading font-bold text-base text-neutral-900 flex items-center gap-2">
-                    <Sparkles className="h-4 w-4 text-amber-500" />
+                    <Sparkles className="h-4 w-4 text-white" />
                     <span>{isArabic ? 'فلسفة ورؤية المشروع' : 'Overview & Vision'}</span>
                   </h4>
                   <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">
@@ -207,7 +207,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
                 {/* 2. Strategic Location */}
                 <div className="p-5 bg-white rounded-xl border border-neutral-200/80 shadow-xs space-y-2">
                   <h4 className="font-heading font-bold text-base text-neutral-900 flex items-center gap-2">
-                    <MapPin className="h-4 w-4 text-amber-500" />
+                    <MapPin className="h-4 w-4 text-white" />
                     <span>{isArabic ? 'الموقع الاستراتيجي والمحاور' : 'Strategic Location & Connectivity'}</span>
                   </h4>
                   <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">
@@ -220,7 +220,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
                 {/* 3. Master Plan & Life Architecture */}
                 <div className="p-5 bg-white rounded-xl border border-neutral-200/80 shadow-xs space-y-2">
                   <h4 className="font-heading font-bold text-base text-neutral-900 flex items-center gap-2">
-                    <Layers className="h-4 w-4 text-amber-500" />
+                    <Layers className="h-4 w-4 text-white" />
                     <span>{isArabic ? 'المخطط العام والخدمات' : 'Master Plan & Facilities'}</span>
                   </h4>
                   <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">
@@ -233,7 +233,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
                 {/* 4. Unit Types & Spaces */}
                 <div className="p-5 bg-white rounded-xl border border-neutral-200/80 shadow-xs space-y-2">
                   <h4 className="font-heading font-bold text-base text-neutral-900 flex items-center gap-2">
-                    <Compass className="h-4 w-4 text-amber-500" />
+                    <Compass className="h-4 w-4 text-white" />
                     <span>{isArabic ? 'أنواع الوحدات ونظم السداد' : 'Unit Types & Flexible Payment Terms'}</span>
                   </h4>
                   <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">
@@ -376,7 +376,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
                       )}
                       
                       {(unit.startingPriceAr || unit.startingPrice) && (
-                        <p className="text-sm font-extrabold text-amber-600 mt-2">
+                        <p className="text-sm font-extrabold text-white mt-2">
                           {isArabic && unit.startingPriceAr ? unit.startingPriceAr : unit.startingPrice}
                         </p>
                       )}
@@ -475,7 +475,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
                       <span className="font-medium text-neutral-800">
                         {isArabic && lm.nameAr ? lm.nameAr : lm.name}
                       </span>
-                      <span className="font-bold text-amber-600 bg-amber-50 px-2.5 py-1 rounded-md">
+                      <span className="font-bold text-white bg-neutral-100 px-2.5 py-1 rounded-md">
                         {isArabic && lm.distanceAr ? lm.distanceAr : lm.distance}
                       </span>
                     </div>

@@ -217,7 +217,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               <div className="space-y-2">
                 <h1 className="font-heading text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight uppercase leading-[1.08] text-white drop-shadow-md">
                   IL CAZAR <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-white to-neutral-100">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-neutral-100">
                     {isArabic ? 'إتقان معماري خالد' : 'DEVELOPMENTS'}
                   </span>
                 </h1>
@@ -247,7 +247,7 @@ export const HomePage: React.FC<HomePageProps> = ({
 
                 <a
                   href="tel:16547"
-                  className="hidden sm:inline-flex items-center gap-2 px-5 py-3.5 bg-black/60 hover:bg-black/90 text-white border border-amber-500/30 rounded-xl text-xs font-bold transition-all"
+                  className="hidden sm:inline-flex items-center gap-2 px-5 py-3.5 bg-black/60 hover:bg-black/90 text-white border border-white/30 rounded-xl text-xs font-bold transition-all"
                 >
                   <PhoneCall className="h-4 w-4 text-white" />
                   <span>16547</span>
@@ -341,7 +341,7 @@ export const HomePage: React.FC<HomePageProps> = ({
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-4 border-b border-neutral-200">
           <div>
-            <span className="text-xs font-bold uppercase tracking-widest text-amber-600">
+            <span className="text-xs font-bold uppercase tracking-widest text-white">
               {isArabic ? 'المشاريع الاستثنائية' : 'Flagship Portfolio'}
             </span>
             <h2 className="font-heading text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-900 mt-1">
@@ -350,7 +350,7 @@ export const HomePage: React.FC<HomePageProps> = ({
           </div>
           <button
             onClick={() => onNavigate('projects')}
-            className="mt-4 md:mt-0 text-xs font-bold uppercase tracking-widest text-neutral-900 hover:text-amber-600 flex items-center gap-1 group"
+            className="mt-4 md:mt-0 text-xs font-bold uppercase tracking-widest text-neutral-900 hover:text-white flex items-center gap-1 group"
           >
             <span>{isArabic ? 'عرض جميع المشاريع' : 'View All Projects'}</span>
             <ArrowRight className={`h-4 w-4 transition-transform group-hover:translate-x-1 ${isArabic ? 'rotate-180' : ''}`} />
@@ -374,7 +374,7 @@ export const HomePage: React.FC<HomePageProps> = ({
         <div className="bg-neutral-50 rounded-3xl p-6 sm:p-10 border border-neutral-200 shadow-sm space-y-6">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
-              <span className="text-xs font-bold uppercase tracking-widest text-amber-600">
+              <span className="text-xs font-bold uppercase tracking-widest text-white">
                 {isArabic ? 'التوزيع الجغرافي' : 'Geographic Footprint'}
               </span>
               <h2 className="font-heading text-2xl sm:text-3xl font-extrabold text-neutral-900 mt-1">

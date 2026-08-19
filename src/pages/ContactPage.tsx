@@ -23,7 +23,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ projects, language = '
         
         {/* Title */}
         <div className="text-center space-y-3">
-          <span className="text-xs font-bold uppercase tracking-widest text-amber-600">
+          <span className="text-xs font-bold uppercase tracking-widest text-white">
             {isArabic ? 'تواصل مع إل كازار' : 'Connect With IL CAZAR'}
           </span>
           <h1 className="font-heading text-4xl sm:text-6xl font-black uppercase tracking-tight text-neutral-900">

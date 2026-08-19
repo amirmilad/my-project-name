@@ -13,7 +13,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquire, language })
     <div className="pt-28 pb-20 bg-white min-h-screen space-y-16">
       {/* Header */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-        <span className="text-xs font-bold uppercase tracking-widest text-amber-600">
+        <span className="text-xs font-bold uppercase tracking-widest text-white">
           {isArabic ? 'نظرة عامة على الشركة' : 'Company Overview'}
         </span>
         <h1 className="font-heading text-4xl sm:text-6xl font-black uppercase tracking-tight text-neutral-900">
