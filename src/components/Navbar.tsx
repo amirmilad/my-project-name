@@ -1,6 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { Logo } from './Logo';
-import { Menu, X, PhoneCall, ChevronRight, Search, MessageCircle, HelpCircle } from 'lucide-react';
+import {
+  Menu,
+  X,
+  PhoneCall,
+  ChevronRight,
+  MessageCircle,
+  Sparkles,
+  Building,
+  Home,
+  Info,
+  Layers,
+  HardHat,
+  Newspaper,
+  Mail,
+  MapPin
+} from 'lucide-react';
 
 interface NavbarProps {
   currentPage: string;
@@ -23,45 +38,69 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 15);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Lock body scroll when menu is open on mobile
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [menuOpen]);
+
   const navLinks = [
-    { id: 'home', label: isArabic ? 'الرئيسية' : 'HOME' },
-    { id: 'about', label: isArabic ? 'عن الشركة' : 'ABOUT US' },
-    { id: 'projects', label: isArabic ? 'المشاريع' : 'PROJECTS' },
-    { id: 'contact', label: isArabic ? 'تواصل معنا' : 'CONTACT US' },
+    { id: 'home', label: isArabic ? 'الرئيسية' : 'HOME', icon: Home },
+    { id: 'about', label: isArabic ? 'عن الشركة' : 'ABOUT US', icon: Info },
+    { id: 'projects', label: isArabic ? 'المشروعات' : 'PROJECTS', icon: Layers },
+    { id: 'construction', label: isArabic ? 'مراحل البناء' : 'CONSTRUCTION', icon: HardHat },
+    { id: 'news', label: isArabic ? 'الأخبار' : 'NEWS', icon: Newspaper },
+    { id: 'contact', label: isArabic ? 'اتصل بنا' : 'CONTACT', icon: Mail }
   ];
 
-  const quickProjects = [
-    { id: 'vea', name: isArabic ? 'فيا' : 'VÉA', loc: isArabic ? 'القاهرة الجديدة' : 'New Cairo' },
-    { id: 'safia', name: isArabic ? 'صافية' : 'SAFIA', loc: isArabic ? 'رأس الحكمة' : 'Ras El Hekma' },
-    { id: 'creek-town', name: isArabic ? 'كريك تاون' : 'CREEK TOWN', loc: isArabic ? 'التجمع الأول' : 'First Settlement' },
-    { id: 'the-crest', name: isArabic ? 'ذا كريست' : 'THE CREST', loc: isArabic ? 'القاهرة الجديدة' : 'New Cairo' },
-    { id: 'c-north', name: isArabic ? 'سي نورث' : 'C NORTH', loc: isArabic ? 'رأس الحكمة' : 'Ras El Hekma' },
-    { id: 'go-heliopolis', name: isArabic ? 'جو هليوبوليس' : 'GO HELIOPOLIS', loc: isArabic ? 'مصر الجديدة' : 'Heliopolis' }
+  const flagshipProjects = [
+    { id: 'the-crest', name: isArabic ? 'ذا كريست' : 'THE CREST', loc: isArabic ? 'التجمع السادس' : '6th Settlement', type: isArabic ? 'فيلات وشقق' : 'Villas & Apts' },
+    { id: 'safia', name: isArabic ? 'صافية' : 'SAFIA', loc: isArabic ? 'رأس الحكمة' : 'Ras El Hekma', type: isArabic ? 'شاطئ ولاجونز' : 'Beach & Lagoons' },
+    { id: 'vea', name: isArabic ? 'فيا' : 'VÉA', loc: isArabic ? 'التجمع السادس' : '6th Settlement', type: isArabic ? 'فيلات فاخرة' : 'Luxury Villas' },
+    { id: 'c-north', name: isArabic ? 'سي نورث' : 'C NORTH', loc: isArabic ? 'رأس الحكمة' : 'Ras El Hekma', type: isArabic ? 'شاليهات وفيلات' : 'Chalets & Villas' },
+    { id: 'creek-town', name: isArabic ? 'كريك تاون' : 'CREEK TOWN', loc: isArabic ? 'التجمع الأول' : 'First Settlement', type: isArabic ? 'مجتمع متكامل' : 'Master Community' },
+    { id: 'go-heliopolis', name: isArabic ? 'جو هليوبوليس' : 'GO HELIOPOLIS', loc: isArabic ? 'مصر الجديدة' : 'Heliopolis', type: isArabic ? 'سكني وتجاري' : 'Mixed-Use' },
+    { id: 'stoda', name: isArabic ? 'ستودا' : 'STODA', loc: isArabic ? 'شيراتون' : 'Sheraton', type: isArabic ? 'سكني وطبي' : 'Residential & Clinics' },
+    { id: 'westdays', name: isArabic ? 'وستدايز' : 'WESTDAYS', loc: isArabic ? 'التجمع السادس' : '6th Settlement', type: isArabic ? 'شقق ومول' : 'Apts & Commercial' }
   ];
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-neutral-900/95 backdrop-blur-xl shadow-xl py-3 border-b border-white/15 text-white'
-          : 'bg-slate-900/40 backdrop-blur-md py-4 border-b border-white/15 text-white shadow-sm'
+          ? 'bg-neutral-950/95 backdrop-blur-xl shadow-2xl py-2.5 sm:py-3 border-b border-white/10 text-white'
+          : 'bg-gradient-to-b from-black/80 via-black/40 to-transparent backdrop-blur-sm py-3.5 sm:py-4 border-b border-white/10 text-white shadow-sm'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <div className="cursor-pointer" onClick={() => { onNavigate('home'); window.scrollTo(0,0); }}>
-            <Logo variant="light" className="h-9 w-9 sm:h-10 sm:w-10" />
+        <div className="flex items-center justify-between gap-2 sm:gap-4">
+          
+          {/* Brand Logo */}
+          <div
+            className="cursor-pointer select-none shrink-0"
+            onClick={() => {
+              onNavigate('home');
+              setMenuOpen(false);
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+          >
+            <Logo variant="light" className="h-8 w-8 sm:h-9 sm:w-9" />
           </div>
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center space-x-7 text-[12px] font-bold tracking-[0.15em]">
+          {/* Desktop Primary Navigation Links (lg and above) */}
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-8 text-[11px] xl:text-[12px] font-bold tracking-[0.15em]">
             {navLinks.map((link) => {
               const isActive = currentPage === link.id;
               return (
@@ -71,181 +110,223 @@ export const Navbar: React.FC<NavbarProps> = ({
                     onNavigate(link.id);
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
-                  className={`relative py-1 uppercase transition-colors hover:text-white ${
-                    isActive ? 'text-white font-extrabold' : 'text-slate-100/90 hover:text-white'
+                  className={`relative py-1.5 uppercase transition-colors hover:text-amber-300 ${
+                    isActive ? 'text-amber-400 font-extrabold' : 'text-neutral-200 hover:text-white'
                   }`}
                 >
-                  {link.label}
+                  <span>{link.label}</span>
                   {isActive && (
-                    <span className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-white rounded-full shadow-sm" />
+                    <span className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-amber-400 to-amber-200 rounded-full shadow-[0_0_8px_rgba(251,191,36,0.8)]" />
                   )}
                 </button>
               );
             })}
           </nav>
 
-          {/* Right Action Icons & Hamburger Button (Visible on ALL devices) */}
-          <div className="flex items-center space-x-2.5 sm:space-x-3">
+          {/* Header Actions (Responsive on All Devices) */}
+          <div className="flex items-center gap-2 sm:gap-2.5 md:gap-3 shrink-0">
+            
             {/* Language Switcher */}
             <button
               onClick={onToggleLanguage}
-              className="text-xs font-bold text-white hover:text-amber-300 transition-colors px-2 py-1 bg-white/10 hover:bg-white/20 rounded-full border border-white/20"
+              className="text-[11px] sm:text-xs font-bold text-white hover:text-amber-300 transition-all px-2.5 py-1.5 bg-white/10 hover:bg-white/20 rounded-full border border-white/20 backdrop-blur-md shadow-sm"
+              title={isArabic ? 'Switch to English' : 'التحويل إلى العربية'}
+              aria-label="Toggle Language"
             >
-              {language === 'EN' ? 'عربي' : 'English'}
+              {language === 'EN' ? 'العربية' : 'EN'}
             </button>
 
-            {/* WhatsApp Icon Button */}
+            {/* Direct WhatsApp Quick Contact */}
             <a
               href="https://wa.me/201012268500"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 bg-emerald-600 hover:bg-emerald-500 text-white rounded-full transition-all shadow-md hover:scale-105"
+              className="flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 bg-emerald-600 hover:bg-emerald-500 text-white rounded-full transition-all shadow-md hover:scale-105"
               title="WhatsApp 01012268500"
               aria-label="WhatsApp"
             >
-              <MessageCircle className="w-5 h-5 fill-white text-emerald-600" />
+              <MessageCircle className="w-4 h-4 sm:w-4.5 sm:h-4.5 fill-white text-emerald-600" />
             </a>
 
-            {/* Hotline Button (Hidden on tiny screens) */}
+            {/* Direct Hotline Pill (Desktop & Tablet) */}
             <a
               href="tel:16547"
-              className="hidden md:flex items-center gap-1.5 px-3 py-1.5 bg-white/15 hover:bg-white/25 border border-white/30 rounded-full text-xs font-bold text-white backdrop-blur-md transition-all shadow-sm"
-              title="Hotline 16547"
+              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 bg-black/50 hover:bg-black/80 border border-amber-400/40 rounded-full text-xs font-bold text-amber-300 backdrop-blur-md transition-all shadow-sm"
+              title={isArabic ? 'الخط الساخن 16547' : 'Hotline 16547'}
             >
-              <PhoneCall className="w-3.5 h-3.5 text-amber-300" />
-              <span>16547 {isArabic ? 'الخط الساخن' : 'Hotline'}</span>
+              <PhoneCall className="w-3.5 h-3.5 text-amber-400" />
+              <span className="font-heading tracking-wider">16547</span>
             </a>
 
-            {/* Need Help Button */}
+            {/* Request Consultation CTA (Hidden on small mobile screens to prevent crowding) */}
             <button
               onClick={onOpenEnquire}
-              className="flex items-center gap-1.5 px-3.5 py-1.5 bg-amber-400 hover:bg-amber-300 text-neutral-950 rounded-full text-xs font-extrabold tracking-wider uppercase transition-all shadow-md"
+              className="hidden md:inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-neutral-950 rounded-full text-xs font-extrabold tracking-wider uppercase transition-all shadow-md hover:scale-105"
             >
-              <HelpCircle className="w-4 h-4 text-neutral-950" />
-              <span>{isArabic ? 'مساعدة' : 'Need Help'}</span>
+              <Sparkles className="w-3.5 h-3.5 text-neutral-950" />
+              <span>{isArabic ? 'طلب استشارة' : 'Enquire'}</span>
             </button>
 
-            {/* Hamburger 3-Bar Circle Button (Visible on ALL devices: mobile & desktop) */}
+            {/* Universal Hamburger Menu Toggle */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white text-neutral-950 flex items-center justify-center shadow-lg hover:bg-amber-400 transition-all transform hover:scale-105 shrink-0"
+              className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white hover:bg-amber-400 text-neutral-950 flex items-center justify-center shadow-lg transition-all transform hover:scale-105 shrink-0"
               aria-label="Toggle Navigation Menu"
-              title={isArabic ? 'القائمة الرئيسية' : 'Toggle Menu'}
+              title={isArabic ? 'القائمة' : 'Menu'}
             >
-              {menuOpen ? <X className="w-5 h-5 text-neutral-950" /> : <Menu className="w-5 h-5 text-neutral-950" />}
+              {menuOpen ? <X className="w-4 h-4 sm:w-5 sm:h-5 text-neutral-950" /> : <Menu className="w-4 h-4 sm:w-5 sm:h-5 text-neutral-950" />}
             </button>
+
           </div>
         </div>
       </div>
 
-      {/* Universal Drawer / Overlay Menu for ALL Devices (Mobile, Tablet & Desktop) */}
+      {/* Universal Fullscreen Mega Navigation Drawer for Mobile & Desktop */}
       {menuOpen && (
-        <div className="fixed inset-x-0 top-[65px] sm:top-[73px] bg-neutral-950/95 backdrop-blur-2xl border-b border-neutral-800 text-white shadow-2xl z-50 animate-in slide-in-from-top duration-300 max-h-[calc(100vh-80px)] overflow-y-auto">
-          <div className="max-w-7xl mx-auto px-6 py-8 grid grid-cols-1 md:grid-cols-12 gap-8">
-            
-            {/* Main Navigation Links */}
-            <div className="md:col-span-5 space-y-4">
-              <span className="text-[11px] font-bold uppercase tracking-widest text-amber-400">
-                {isArabic ? 'التنقل الرئيسي' : 'MAIN NAVIGATION'}
-              </span>
-              <div className="flex flex-col space-y-2">
-                {navLinks.map((link) => (
-                  <button
-                    key={link.id}
-                    onClick={() => {
-                      onNavigate(link.id);
-                      setMenuOpen(false);
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }}
-                    className={`py-2.5 px-4 rounded-xl text-left font-heading text-lg sm:text-2xl font-black tracking-wider uppercase transition-all flex items-center justify-between ${
-                      currentPage === link.id
-                        ? 'bg-white text-neutral-950 shadow-md'
-                        : 'text-neutral-300 hover:bg-neutral-900 hover:text-white'
-                    }`}
-                  >
-                    <span>{link.label}</span>
-                    <ChevronRight className={`h-5 w-5 ${isArabic ? 'rotate-180' : ''}`} />
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Quick Links to Flagship Projects */}
-            <div className="md:col-span-4 space-y-4 border-t md:border-t-0 md:border-l border-neutral-800 pt-6 md:pt-0 md:pl-8">
-              <span className="text-[11px] font-bold uppercase tracking-widest text-amber-400">
-                {isArabic ? 'أبرز المشاريع' : 'FLAGSHIP PROJECTS'}
-              </span>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-2">
-                {quickProjects.map((p) => (
-                  <button
-                    key={p.id}
-                    onClick={() => {
-                      onNavigate('project-detail', p.id);
-                      setMenuOpen(false);
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }}
-                    className="p-3 bg-neutral-900/80 hover:bg-neutral-800 rounded-xl border border-neutral-800 transition-all text-left group flex items-center justify-between"
-                  >
-                    <div>
-                      <h4 className="font-heading font-extrabold text-sm text-white group-hover:text-amber-300 transition-colors">
-                        {p.name}
-                      </h4>
-                      <p className="text-[11px] text-neutral-400 font-light">{p.loc}</p>
-                    </div>
-                    <ChevronRight className={`h-4 w-4 text-neutral-500 group-hover:text-amber-300 transition-colors ${isArabic ? 'rotate-180' : ''}`} />
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Direct Contact & Consultation Column */}
-            <div className="md:col-span-3 space-y-4 border-t md:border-t-0 md:border-l border-neutral-800 pt-6 md:pt-0 md:pl-8 flex flex-col justify-between">
-              <div className="space-y-4">
-                <span className="text-[11px] font-bold uppercase tracking-widest text-amber-400">
-                  {isArabic ? 'التواصل المباشر' : 'DIRECT CONTACT'}
+        <div className="fixed inset-x-0 top-[58px] sm:top-[64px] bottom-0 bg-neutral-950/98 backdrop-blur-2xl border-b border-neutral-800 text-white shadow-2xl z-50 overflow-y-auto animate-in slide-in-from-top duration-300">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8">
+              
+              {/* Column 1: Main Pages Navigation */}
+              <div className="md:col-span-4 space-y-3 sm:space-y-4">
+                <span className="text-[11px] font-bold uppercase tracking-widest text-amber-400 flex items-center gap-1.5">
+                  <Building className="h-3.5 w-3.5" />
+                  <span>{isArabic ? 'الصفحات الرئيسية' : 'MAIN PAGES'}</span>
                 </span>
-                <a
-                  href="tel:16547"
-                  className="flex items-center gap-3 p-3 bg-neutral-900 rounded-xl border border-neutral-800 text-white hover:border-amber-400/50 transition-colors"
-                >
-                  <PhoneCall className="h-5 w-5 text-amber-400 shrink-0" />
-                  <div>
-                    <span className="block text-[10px] text-neutral-400 uppercase font-semibold">
-                      {isArabic ? 'الخط الساخن' : 'HOTLINE'}
-                    </span>
-                    <strong className="font-heading text-lg font-black text-amber-300">16547</strong>
-                  </div>
-                </a>
-
-                <a
-                  href="https://wa.me/201012268500"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-3 bg-emerald-950/60 rounded-xl border border-emerald-800/60 text-white hover:bg-emerald-900/60 transition-colors"
-                >
-                  <MessageCircle className="h-5 w-5 text-emerald-400 fill-emerald-400 shrink-0" />
-                  <div>
-                    <span className="block text-[10px] text-emerald-300 uppercase font-semibold">
-                      {isArabic ? 'خدمة الواتساب' : 'WHATSAPP DIRECT'}
-                    </span>
-                    <strong className="font-mono text-sm font-bold">01012268500</strong>
-                  </div>
-                </a>
+                
+                <div className="flex flex-col gap-1.5 sm:gap-2">
+                  {navLinks.map((link) => {
+                    const IconComp = link.icon;
+                    const isActive = currentPage === link.id;
+                    return (
+                      <button
+                        key={link.id}
+                        onClick={() => {
+                          onNavigate(link.id);
+                          setMenuOpen(false);
+                          window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }}
+                        className={`py-3 px-4 rounded-xl font-heading text-base sm:text-lg font-black tracking-wide uppercase transition-all flex items-center justify-between ${
+                          isActive
+                            ? 'bg-gradient-to-r from-amber-400 to-amber-500 text-neutral-950 shadow-lg'
+                            : 'bg-neutral-900/60 hover:bg-neutral-850 text-neutral-200 hover:text-white border border-neutral-800/80'
+                        }`}
+                      >
+                        <div className="flex items-center gap-3">
+                          <IconComp className={`h-4 w-4 ${isActive ? 'text-neutral-950' : 'text-amber-400'}`} />
+                          <span>{link.label}</span>
+                        </div>
+                        <ChevronRight className={`h-4 w-4 ${isArabic ? 'rotate-180' : ''} ${isActive ? 'text-neutral-950' : 'text-neutral-400'}`} />
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
 
-              <div className="pt-4">
-                <button
-                  onClick={() => {
-                    setMenuOpen(false);
-                    onOpenEnquire();
-                  }}
-                  className="w-full py-3.5 bg-amber-400 hover:bg-amber-300 text-neutral-950 font-extrabold text-xs uppercase tracking-widest rounded-xl transition-all shadow-lg text-center"
-                >
-                  {isArabic ? 'طلب استشارة خاصة' : 'REQUEST PRIVATE CONSULTATION'}
-                </button>
+              {/* Column 2: Flagship Developments Portfolio */}
+              <div className="md:col-span-5 space-y-3 sm:space-y-4 border-t md:border-t-0 md:border-x border-neutral-800/80 pt-6 md:pt-0 md:px-6">
+                <div className="flex items-center justify-between">
+                  <span className="text-[11px] font-bold uppercase tracking-widest text-amber-400 flex items-center gap-1.5">
+                    <Layers className="h-3.5 w-3.5" />
+                    <span>{isArabic ? 'أبرز المشروعات' : 'FLAGSHIP PROJECTS'}</span>
+                  </span>
+                  <button
+                    onClick={() => {
+                      onNavigate('projects');
+                      setMenuOpen(false);
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                    className="text-[11px] font-bold text-amber-300 hover:underline"
+                  >
+                    {isArabic ? 'عرض الكل' : 'View All'}
+                  </button>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {flagshipProjects.map((p) => (
+                    <button
+                      key={p.id}
+                      onClick={() => {
+                        onNavigate('project-detail', p.id);
+                        setMenuOpen(false);
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }}
+                      className="p-3 bg-neutral-900/60 hover:bg-neutral-800/90 rounded-xl border border-neutral-800 transition-all text-start group flex items-center justify-between"
+                    >
+                      <div className="space-y-0.5 min-w-0 pr-2">
+                        <h4 className="font-heading font-extrabold text-xs sm:text-sm text-white group-hover:text-amber-300 transition-colors truncate">
+                          {p.name}
+                        </h4>
+                        <div className="flex items-center gap-1 text-[10px] text-neutral-400">
+                          <MapPin className="h-2.5 w-2.5 text-amber-400 shrink-0" />
+                          <span className="truncate">{p.loc}</span>
+                        </div>
+                      </div>
+                      <ChevronRight className={`h-3.5 w-3.5 text-neutral-500 group-hover:text-amber-300 transition-colors shrink-0 ${isArabic ? 'rotate-180' : ''}`} />
+                    </button>
+                  ))}
+                </div>
               </div>
+
+              {/* Column 3: Direct VIP Contact & Consultation */}
+              <div className="md:col-span-3 space-y-4 border-t md:border-t-0 border-neutral-800/80 pt-6 md:pt-0 flex flex-col justify-between">
+                <div className="space-y-3">
+                  <span className="text-[11px] font-bold uppercase tracking-widest text-amber-400 flex items-center gap-1.5">
+                    <PhoneCall className="h-3.5 w-3.5" />
+                    <span>{isArabic ? 'التواصل المباشر' : 'DIRECT CONTACT'}</span>
+                  </span>
+
+                  {/* Hotline Dial */}
+                  <a
+                    href="tel:16547"
+                    className="flex items-center gap-3 p-3.5 bg-neutral-900/80 rounded-xl border border-amber-400/30 text-white hover:border-amber-400 transition-colors shadow-sm"
+                  >
+                    <div className="w-9 h-9 rounded-lg bg-amber-400/20 text-amber-300 flex items-center justify-center shrink-0">
+                      <PhoneCall className="h-4 w-4" />
+                    </div>
+                    <div>
+                      <span className="block text-[10px] text-neutral-400 uppercase font-semibold">
+                        {isArabic ? 'الخط الساخن الرسمي' : 'OFFICIAL HOTLINE'}
+                      </span>
+                      <strong className="font-heading text-lg font-black text-amber-300">16547</strong>
+                    </div>
+                  </a>
+
+                  {/* WhatsApp Direct */}
+                  <a
+                    href="https://wa.me/201012268500"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 p-3.5 bg-emerald-950/60 rounded-xl border border-emerald-700/60 text-white hover:bg-emerald-900/60 transition-colors shadow-sm"
+                  >
+                    <div className="w-9 h-9 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+                      <MessageCircle className="h-4 w-4 fill-emerald-400 text-emerald-400" />
+                    </div>
+                    <div>
+                      <span className="block text-[10px] text-emerald-300 uppercase font-semibold">
+                        {isArabic ? 'محادثة واتساب فورية' : 'INSTANT WHATSAPP'}
+                      </span>
+                      <strong className="font-mono text-sm font-bold text-white">01012268500</strong>
+                    </div>
+                  </a>
+                </div>
+
+                {/* Consultation Button */}
+                <div className="pt-3">
+                  <button
+                    onClick={() => {
+                      setMenuOpen(false);
+                      onOpenEnquire();
+                    }}
+                    className="w-full py-3.5 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-neutral-950 font-black text-xs uppercase tracking-widest rounded-xl transition-all shadow-xl text-center"
+                  >
+                    {isArabic ? 'طلب استشارة خاصة ومخطط' : 'REQUEST PRIVATE CONSULTATION'}
+                  </button>
+                </div>
+
+              </div>
+
             </div>
-
           </div>
         </div>
       )}

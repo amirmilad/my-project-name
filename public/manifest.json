@@ -1,0 +1,16 @@
+{
+  "name": "IL CAZAR Developments | إل كازار للتطوير العقاري",
+  "short_name": "IL CAZAR",
+  "description": "Egypt's premier luxury real estate developer. Explore projects in New Cairo, Ras El Hekma & New Alamein.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#0a111e",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
